@@ -1,0 +1,36 @@
+# Secrets — never commit these
+.env
+*.env
+**/secrets.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Patient data — never commit real or de-identified patient-level data
+# to a public repository unless explicitly cleared for release under the
+# study's ethics approval / data use agreement.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Pipeline outputs (regenerable; keep the repo focused on code)
+results/*
+!results/.gitkeep
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Jupyter (this repo intentionally ships no notebooks, but ignore checkpoints
+# in case one is added locally during development)
+.ipynb_checkpoints/
