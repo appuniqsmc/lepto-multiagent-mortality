@@ -172,7 +172,7 @@ Includes regression tests that reproduce the exact confusion matrix and DeLong s
 
 ## Data availability
 
-**No patient data is included in this repository.** The original clinical dataset (116 ICU patients with severe leptospirosis) is not publicly released, in accordance with the study's institutional ethics approval and patient privacy requirements. Researchers wishing to reproduce results on the original cohort should contact the corresponding author to discuss a data use agreement, subject to institutional and ethical approval. `data/raw/` and `data/processed/` are empty placeholders in this repository; supply your own CSV matching the schema in `config/config.yaml` (`pipeline.required_fields`) to run the pipeline.
+**No patient data is included in this repository.** The original clinical dataset (116 ICU patients with severe leptospirosis) is available on zenodo
 
 ---
 
