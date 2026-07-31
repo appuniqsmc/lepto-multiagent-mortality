@@ -195,7 +195,6 @@ Prediction in Severe Leptospirosis: Discrimination, Calibration, and a Failure
 Mode in Specialist Synthesis. [Journal, year, DOI once available].
 ```
 
-A citable software release of this repository (with a Zenodo-issued DOI) is available at: `[insert Zenodo DOI badge/link once minted]`.
 
 ---
 
