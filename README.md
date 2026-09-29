@@ -11,7 +11,7 @@ It contains **only the multi-agent LLM implementation and its statistical analys
 ## Architecture
 
 ```
-                 Structured patient data (64 clinical variables)
+                 Structured patient data (24 clinical variables)
                                     |
         ┌───────────┬───────────┬──┴──────────┬──────────────────┐
         ▼           ▼           ▼              ▼                  ▼
@@ -28,7 +28,7 @@ It contains **only the multi-agent LLM implementation and its statistical analys
                   Final mortality prediction + probability
 ```
 
-Each of the five specialist agents receives the **complete** structured patient record (not a filtered subset) but is instructed, via its prompt, to reason only within its assigned specialty. No specialist sees another specialist's output. The Intensivist agent receives all five specialist outputs; the Judge agent receives all five specialist outputs plus the Intensivist's output.
+Each of the five specialist agents receives the same curated set of 24 clinical variables (age, sex, ICU vitals, renal/electrolyte/coagulation/inflammatory markers, MV/AKI/shock/myocarditis/coagulopathy/sepsis flags — see prompts/patient_template.txt) but is instructed, via its prompt, to reason only within its assigned specialty.. No specialist sees another specialist's output. The Intensivist agent receives all five specialist outputs; the Judge agent receives all five specialist outputs plus the Intensivist's output.
 
 **Note on the Intensivist agent:** this pipeline's exploratory analysis (see `scripts/compute_statistics.py` → `failure_mode_analysis`, and the manuscript Results/Discussion) found that, in the original study run, the Intensivist's predictions tracked simple specialist majority vote in 74% of cases and significantly underperformed the single best specialist agent (paired DeLong p = 0.0087). The code and prompts here therefore describe it neutrally as an "integration step" rather than assuming it performs effective synthesis — that is an empirical question this repository lets you re-test, not a property built into its design.
 
